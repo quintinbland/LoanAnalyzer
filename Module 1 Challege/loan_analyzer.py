@@ -73,10 +73,12 @@ loan = {
 # @TODO: Use get() on the dictionary of additional information to extract the Future Value and Remaining Months on the loan.
 # Print each variable.
 future_value = loan.get('future_value') # pulling future value from loan dictionary 
-print('The Future Value of the loan is', future_value) # printing future value as a string 
+print('The Future Value of the loan is $', future_value) # printing future value as a string 
 
-remaining_months = loan.get('remaining_months') # pulling remaining months from loan dictionary, assigning to remaining
-print(remaining_months, 'months remain on the loan') # printing remaining months as a string
+# using get() to pull value of 'remaining_months' from 'loan' dictionary
+remaining_months = loan.get('remaining_months') 
+# printing remaining months as an easy to read string
+print(remaining_months, 'months remain on the loan') 
 
 
 # @TODO: Use the formula for Present Value to calculate a "fair value" of the loan.
@@ -134,7 +136,7 @@ def present_value(future_value, annual_discount_rate, remaining_months):
 #    Use an `annual_discount_rate` of 0.2 for this new loan calculation.
 present_value = present_value(future_value, annual_discount_rate, remaining_months)
 present_value = round(present_value, 2)
-print(f"The present value of the loan is: {present_value: .2f}")
+print(f"The present value of the loan is: ${present_value: .2f}")
 
 
 """Part 4: Conditionally filter lists of loans.
@@ -210,12 +212,11 @@ output_path = Path("inexpensive_loans.csv")
 
     # @TODO: Use the csv library and `csv.writer` to write the header row
     # and each row of `loan.values()` from the `inexpensive_loans` list.
-    # YOUR CODE HERE!
 
-with open(output_path, 'w', newline='') as csvfile: #adding new line to csvfile
-    csvwriter = csv.writer(csvfile) # starting the csvwriter so we can add values to the new line
-    csvwriter.writerow(header) # writing the 'header' list into the new line
+with open(output_path, 'w', newline='') as csvfile: 
+    csvwriter = csv.writer(csvfile) 
+    csvwriter.writerow(header)
     for loan in inexpensive_loans: 
-        csvwriter.writerow(loan.values()) # iterating through inexpensive loans and writing a row for each inexpensive loan. 
+        csvwriter.writerow(loan.values())  
 
 
