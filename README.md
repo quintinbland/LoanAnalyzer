@@ -1,7 +1,6 @@
 # loan_analyzer
 
-This project will analyze loan information. The project will calculate the present and future value and converting the results into a .csv file. 
-
+This project will analyze loan information and calculate the present and future value and converting the results into a .csv file.
 
 ---
 
